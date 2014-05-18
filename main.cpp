@@ -54,7 +54,7 @@ class FileWriteError : public FileError {
 public:
 
     FileWriteError( const std::string &fileNameIn ) : FileError( fileNameIn ) {
-        m_msg = "Unable to write " + fileNameIn;
+        m_msg = "Error writing " + fileNameIn;
     }
 };
 

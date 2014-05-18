@@ -35,17 +35,17 @@ protected:
 class FileOpenError : public FileError {
 public:
 
-    FileOpenError( const std::string &fileNameIn ) : FileError( fileNameIn ) {
-        m_msg = "Unable to open " + fileNameIn;
+    FileOpenError( const std::string &fileName ) : FileError( fileName ) {
+        m_msg = "Unable to open " + fileName;
     }
 };
 
 class FileReadError : public FileError {
 public:
 
-    FileReadError( const std::string &fileNameIn ) : FileError( fileNameIn ) {
+    FileReadError( const std::string &fileName ) : FileError( fileName ) {
         std::ostringstream ostr;
-        ostr << "Error reading " << fileNameIn;
+        ostr << "Error reading " << fileName;
         m_msg = ostr.str( );
     }
 };
@@ -53,8 +53,8 @@ public:
 class FileWriteError : public FileError {
 public:
 
-    FileWriteError( const std::string &fileNameIn ) : FileError( fileNameIn ) {
-        m_msg = "Error writing " + fileNameIn;
+    FileWriteError( const std::string &fileName ) : FileError( fileName ) {
+        m_msg = "Error writing " + fileName;
     }
 };
 
